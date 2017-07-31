@@ -1,7 +1,7 @@
 package com.springmvc.service.impl;
 
 import com.springmvc.service.PersonServer;
-import com.springmvc.service.impl.PersonServerImpl;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

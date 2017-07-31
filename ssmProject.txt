@@ -1,0 +1,94 @@
+数据库设计：
+
+create database zojoDatabase;
+use zojoDatabase;
+//管理员表
+create table manager (
+ id varchar(30) primary key,
+ password varchar(30),
+ name varchar(30),
+ age int,
+ status varchar(30),
+ isLogin varchar(30),
+ authorization varchar(100)
+);
+//被筛查人员基本信息：
+create table personBaseMess(
+  peopleId varchar(30) primary key,
+  numberManual varchar(30),
+  password varchar(30),
+  name varchar(30),
+  age int,
+  tel varchar(13),
+  community varchar(30),
+  address varchar(100),
+  updateDate datetime
+);
+//基本体征检测表
+create table baseHealthData(
+ peopleId varchar(30) primary key,
+ temperature int,
+ systolicPressure int,
+ diastolicPressure int,
+ pulse int,
+ bloodOxygen int,
+ heartRate int,
+ height int,
+ weight int,
+ waistLine int,
+ hipeLine int,
+ bodyFat int,
+ BMI int,
+ diabetesRisk int,
+ bloodVesseFlexibleData int,
+ updateDate datetime
+);
+
+//健康基本调查表
+create table healthSurvey(
+ peopleId varchar(30) primary key,
+ isSmoke varchar(30),
+ smokeYears int,
+ isDrink varchar(30),
+ drinkYears int,
+ sportsTime int,
+ sleepTime int,
+ updateDate datetime 
+);
+
+
+//被测者的患病历史表
+create table illnessHistory(
+ historyId varchar(30) primary key,
+ peopleId varchar(30),
+ illnessName varchar(30),
+ updateDate datetime
+);
+
+//被测者的家族患病历史表
+create table illnessHistory(
+ historyFamilyId varchar(30) primary key,
+ peopleId varchar(30),
+ relationName varchar(30),
+ relationLevel varchar(30),
+ illnessName varchar(30),
+ updateDate datetime
+);
+
+//被测者的食物偏好表
+create table favoriteFood(
+ favoriteId varchar(30) primary key,
+ peopleId varchar(30),
+ foodName varchar(30),
+ foodKind varchar(30),
+ updateDate datetime
+);
+
+//被测者身体不适记录表
+create table badPerformance(
+ performanceId varchar(30) primary key,
+ peopleId varchar(30),
+ performanceName varchar(30),
+ updateDate datetime
+);
+
